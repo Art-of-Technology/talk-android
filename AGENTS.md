@@ -222,3 +222,11 @@ After finishing code changes, run `./gradlew detekt ktlintCheck` and fix any new
   ```
 
   General pattern: `Assisted-by: <coding-agent>:<model-version>`
+
+## Fork upstream review
+
+At session start, inspect the review ledger using [talk-upstream-review](.agents/skills/talk-upstream-review/SKILL.md). Run that review when the last completed review is missing or more than seven days old, before a release, and when a relevant upstream security fix becomes known. An incomplete review does not reset the interval.
+
+Reviews produce evidence and recommendations only: no automatic adoption, merge, deployment, or scheduler. Read the skill and its [Android context](.agents/skills/talk-upstream-review/repo-context.md) before reviewing. This fork tracks `nextcloud/talk-android` (`master`) as its source; this is not proof of the fork's integration branch. Before any future pull request, verify the current integration branch from live fork evidence and target only `Art-of-Technology/talk-android`, never upstream. Existing contribution and human-review restrictions still apply.
+
+Keep committed customizations brand-neutral; deployment-specific names, domains, signing credentials, and branding belong in ignored local configuration.
